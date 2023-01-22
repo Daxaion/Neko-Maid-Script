@@ -1,0 +1,45 @@
+		cwScriptsTab:NewButton('Road Rogue', 'vroom vroom', function()
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/shidemuri/coffeeware/main/Driveby_Simplifier.lua'))()
+		end)
+
+		cwScriptsTab:NewButton('Katanarist', 'he gonna slice yo pp', function()
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/shidemuri/coffeeware/main/katanarist.lua'))()
+		end)
+
+		cwScriptsTab:NewButton('Assassin', 'hes got a whole ass inventory on wtf', function()
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/shidemuri/coffeeware/main/assassin.lua'))()
+		end)
+
+		cwScriptsTab:NewButton('Strato Glitcher', 'its just spinning swords yet its cool',function()
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/shidemuri/coffeeware/main/strato_glitcher.lua'))()
+		end)
+
+		cwScriptsTab:NewButton('Stando Power (REJOIN TO REEXEC)', (function() local str=''for _=0,200 do str = str .. 'ora ' end return str end)(), function() 
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/shidemuri/coffeeware/main/Standopower.lua'))()
+		end)
+
+		cwScriptsTab:NewButton("Studio Dummy V3", '"i should make antideath by making a fake char" 🤓', function()
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/shidemuri/coffeeware/main/sdv3.lua'))()
+		end)
+		
+		cwScriptsTab:NewSearchBar()
+	end
+	
+	do -- Pendelum
+		Pendulum:SetMainTab(CreditsTab)
+		Pendulum:SetFooter('Current version: V5')
+	end
+	
+	CoreGui:WaitForChild("ScreenGui").Name = "Pendulum Hub"
+	
+	Blur.Parent = Lighting
+	task.spawn(function()
+		local FOV = Camera.FieldOfView
+		TweenService:Create(Blur,TweenInfo.new(1.3),{Size=40}):Play()
+		TweenService:Create(Camera,TweenInfo.new(0.5,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut),{FieldOfView=FOV-15}):Play()
+		task.wait(2)
+		TweenService:Create(Blur,TweenInfo.new(0.65),{Size=0}):Play()
+		task.wait(1.5)
+		TweenService:Create(Camera,TweenInfo.new(0.5,Enum.EasingStyle.Quad,Enum.EasingDirection.InOut),{FieldOfView=FOV}):Play()
+	end)
+end
